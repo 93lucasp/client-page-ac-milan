@@ -1,0 +1,164 @@
+nav {
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    color: $color-white;
+    li {
+        padding: 0 10px;
+        display: inline-block;
+    }
+    .navBar-left {
+        width: 30%;
+        padding: 10px 0;
+        position: relative;
+        display: inline-block;
+        float: left;
+    }
+    .navBar-right {
+        width: 70%;
+        padding: 22px 0;
+        position: relative;
+        display: inline-block;
+        float: right;
+        text-align: right;
+        a {
+            -webkit-transition: all 0.3s ease !important;
+            transition: all 0.3s ease !important;
+            &:hover {
+                padding-bottom: 0.25em;
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+    @media screen and (max-width: map-get($mq-breakpoints, l-tablet)) {
+        padding: 0;
+        .navBar-left {
+            width: 70%;
+        }
+        #icon-menu {
+            visibility: visible;
+        }
+        .navBar-right {
+            visibility: hidden;
+        }
+        .menu-drop-down {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-weight: bold;
+            font-size: 0.8em;
+            background-color: $color-theme-with-opacity;
+            text-align: center;
+            z-index: 10;
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                display: block;
+                padding: 15px 0 15px 0;
+                border-bottom: $color-white 1px solid;
+            }
+        }
+        #icon-menu {
+            width: 40px;
+            margin: 5px auto;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .5s ease-in-out;
+            -moz-transition: .5s ease-in-out;
+            -o-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+            z-index: 11;
+            span {
+                width: 50%;
+                height: 3px;
+                display: block;
+                position: absolute;
+                background: #fff;
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+                -webkit-transition: .25s ease-in-out;
+                -moz-transition: .25s ease-in-out;
+                -o-transition: .25s ease-in-out;
+                transition: .25s ease-in-out;
+                &:nth-child(even) {
+                    left: 50%;
+                    border-radius: 0 9px 9px 0;
+                }
+                &:nth-child(odd) {
+                    left: 0px;
+                    border-radius: 9px 0 0 9px;
+                }
+                &:nth-child(1),
+                &:nth-child(2) {
+                    top: 8px;
+                }
+                &:nth-child(3),
+                &:nth-child(4) {
+                    top: 17px;
+                }
+                &:nth-child(5),
+                &:nth-child(6) {
+                    top: 26px;
+                }
+                &:nth-child(7),
+                &:nth-child(8) {
+                    top: 35px;
+                }
+            }
+            &.open span:nth-child(1),
+            &.open span:nth-child(6) {
+                @include rotate(45deg);
+            }
+            &.open span:nth-child(2),
+            &.open span:nth-child(5) {
+                @include rotate(-45deg);
+            }
+            &.open span:nth-child(1) {
+                top: 7px;
+                left: 2px;
+            }
+            &.open span:nth-child(2) {
+                top: 7px;
+                left: 16px;
+            }
+            &.open span:nth-child(3) {
+                left: -50%;
+                opacity: 0;
+            }
+            &.open span:nth-child(4) {
+                left: 100%;
+                opacity: 0;
+            }
+            &.open span:nth-child(5) {
+                top: 20px;
+                left: 2px;
+            }
+            &.open span:nth-child(6) {
+                top: 20px;
+                left: 16px;
+            }
+        }
+    }
+    @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+        .navBar-left {
+            width: 100%;
+            padding: 10px 0;
+        }
+        li {
+            font-size: .7rem;
+        }
+    }
+}

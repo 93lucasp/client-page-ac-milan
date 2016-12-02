@@ -1,0 +1,58 @@
+@import "base/globals";
+@import "sass-mq/mq";
+@import "normalize-css/normalize";
+@import "base/functions";
+@import "base/mixins";
+@import "base/fonts";
+@import "base/colors";
+@import "base/base";
+@import "base/typography";
+@import "base/reset";
+// objects here
+// components here
+// layouts here
+// utils at the bottom
+@import "base/utils";
+body {
+    background: orange;
+    height: 1000px;
+}
+/*NAVBAR CUSTOM*/
+@import "base/navBar";
+
+// .bar {
+// 	background:#000;
+// 	color:$color-white;
+// 	width:100%;
+// 	position: relative;
+// 	height: 500px;
+// }
+// .bar1 {
+// 	background:$color-white;
+// 	color:$color-white;
+// 	width:100%;
+// 	position: relative;
+// 	height: 500px;
+// }
+// .eighty.start {
+// 	position: absolute;
+// 	width: 130px;
+// 	height: 130px;
+// 	background: red;
+// 	animation: moving 2s  forwards;
+// }
+// .eighty1.start {
+// 	position: absolute;
+// 	width: 130px;
+// 	height: 130px;
+// 	background: red;
+// 	animation: moving 2s  forwards;
+// }
+// @keyframes moving {
+//   0% {
+//     top: 300px;
+//   }
+//   100% {
+//     top: 0px;
+//   }
+// }

@@ -1,0 +1,171 @@
+/* ==========================================================================
+
+   Base Styles
+   ====
+
+
+   Some Basic Styles
+
+   ```
+   ```
+
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: $color-text;
+}
+
+html,
+body {
+    line-height: 1.2;
+}
+
+html {
+    font-size: percentage($font-size-default / 16px); //16px
+}
+
+body {
+    min-width: 320px;
+    color: $color-text;
+}
+
+//Remove text-shadow in selection highlight: h5bp.com/i
+//These selection declarations have to be separate.
+//Customize the background color to match your design.
+
+//::-moz-selection {
+//    background-color: $color-text-selection;
+//    text-shadow: none;
+//}
+//
+//::selection {
+//    background-color: $color-text-selection;
+//    text-shadow: none;
+//}
+
+// Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+
+audio,
+canvas,
+iframe,
+svg,
+video,
+img {
+    vertical-align: middle;
+}
+
+// Remove default fieldset styles.
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+// Allow only vertical resizing of textareas.
+
+textarea {
+    resize: vertical;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:visited {
+        color: inherit;
+    }
+}
+
+abbr[title] {
+    border: 0;
+    text-decoration: none;
+}
+
+a,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+    &:focus,
+    &:active {
+        outline: 0;
+    }
+}
+
+/* ==========================================================================
+   ##  prevent 300ms delay in FF, Chrome and IE on touch devices
+   ========================================================================== */
+
+a[href],
+button {
+    touch-action: manipulation;
+}
+
+/* ==========================================================================
+   ## CSS to JS Breakpoint Bridge
+   ========================================================================== */
+
+@if $mq-responsive {
+
+    body::after,
+    body::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: z-index(behind) - 2;
+        visibility: hidden;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        display: block;
+    }
+
+    body::after {
+        content: 'mobile';
+        @each $mq-key, $mq-value in $mq-breakpoints {
+            @include mq($mq-key) {
+                content: '#{$mq-key}';
+            }
+        }
+    }
+
+    body::before {
+        content: '/#{map-to-JSON($mq-breakpoints)}/';
+    }
+
+    //fallback
+    head {
+        font-family: '/#{map-to-JSON($mq-breakpoints)}/';
+    }
+}

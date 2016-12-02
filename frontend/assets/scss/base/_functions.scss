@@ -1,0 +1,138 @@
+// ==========================================================================
+// Mixins and functions
+//
+// Note: always put function at the beginning of the sub-section
+// ==========================================================================
+
+// Generic
+// ==========================================================================
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+@function map-negative($map) {
+
+    $keys: map-keys($map);
+
+    $result: ();
+
+    @if length($keys) == 1 {
+        @return map-merge($map, ($keys: $value));
+    }
+
+    @for $i from 1 through length($keys) {
+
+        $current-key: nth($keys, $i);
+
+        $current-val: map-get($map, $current-key);
+
+        $result: map-merge($result, ($current-key: $current-val * -1));
+    }
+
+    @return $result;
+}
+
+@function map-combine($map, $map2) {
+
+    $keys: map-keys($map);
+
+    $result: ();
+
+    @if length($keys) == 1 {
+        @return map-merge($map, ($keys: $value));
+    }
+
+    @for $i from 1 through length($keys) {
+
+        $current-key: nth($keys, $i);
+
+        $current-val-m1: map-get($map, $current-key);
+
+        $current-val-m2: map-get($map2, $current-key);
+
+        $tmp: calc(#{$current-val-m1} + #{($current-val-m2 * 2) - 1});
+
+        $result: map-merge($result, ($current-key: $tmp));
+    }
+
+    @return $result;
+
+}
+
+@function perc($width, $container-width: $container-width) {
+    @return percentage($width / $container-width);
+}
+
+@function perc-image-width($image-src, $container-width: $container-width) {
+    @return percentage(image-width($image-src) / $container-width);
+}
+
+@function strip-units($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@function z-index($level: 'base') {
+    @return map-get($layers, $level);
+}
+
+
+@function vw($width, $viewport-reference-width: $viewport-width) {
+    @return (strip-units($width) / strip-units($viewport-reference-width)) * 100 + vw;
+}
+
+@function vh($height, $viewport-reference-height: $viewport-height) {
+    @return (strip-units($height) / strip-units($viewport-reference-height)) * 100 + vh;
+}
+
+// Typography
+//
+// Adapted from https://github.com/csswizardry/typecsset
+// ==========================================================================
+
+@function em($pixels, $context: $font-size-default) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+
+    @return #{$pixels / $context}em;
+}
+
+@function rem($pixels) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @return #{$pixels / $font-size-default}rem;
+}
+
+@function font-size($size, $rem: true) {
+    @if map-has-key($font-sizes, $size) == true {
+        $size: map-get($font-sizes, $size);
+    }
+
+    @if $rem == true {
+        @return rem($size);
+    } @else {
+        @return $size
+    }
+}
+
+@function line-height($size, $context: m) {
+    $context-size: font-size($context, false);
+    @return em($size, $context-size);
+}
+
+@function font-weight($weight) {
+    @if map-has-key($font-weights, $weight) {
+        @return map-get($font-weights, $weight);
+    } @else {
+        @return $weight;
+    }
+}

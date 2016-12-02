@@ -1,0 +1,37 @@
+{
+    "extends": "airbnb-base",
+
+    "env": {
+        "commonjs": true,
+        "es6": true,
+        "browser": true
+    },
+
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "arrowFunctions": true,
+            "blockBindings": true,
+            "classes": true,
+            "defaultParams": true,
+            "destructuring": true,
+            "forOf": true,
+            "generators": false,
+            "objectLiteralComputedProperties": true,
+            "objectLiteralDuplicateProperties": false,
+            "objectLiteralShorthandMethods": true,
+            "objectLiteralShorthandProperties": true,
+            "spread": true,
+            "superInFunctions": true,
+            "templateStrings": true,
+            "jsx": false
+        }
+    },
+
+    "rules": {
+        "eol-last": 0,
+        "comma-dangle": [2, "never"],    // http://eslint.org/docs/rules/comma-dangle
+        "indent": [2, 4]                // http://eslint.org/docs/rules/indent
+    }
+}

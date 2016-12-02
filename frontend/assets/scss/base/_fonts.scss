@@ -1,0 +1,40 @@
+$font-size-default: 16px !default;
+$font-base-path: '/assets/fonts/' !default;
+
+$font-sizes: (
+
+) !default;
+
+// fonts url needs to follow the convention
+// '../fonts/#{$font}/#{$font-family}/#{$font-family}'
+
+//@enhance
+
+// Eg:
+//$fonts: (
+//    sourcesans: (
+//        SourceSansPro-Bold,
+//        SourceSansPro-ExtraLight,
+//        SourceSansPro-Italic,
+//        SourceSansPro-Light,
+//        SourceSansPro-Regular
+//    )
+//);
+
+$fonts: (
+) !default;
+
+@each $font in map-keys($fonts) {
+
+    @each $font-family in map-deep-get($fonts, $font) {
+
+        @font-face {
+            font-family: $font-family;
+            src:
+                url('#{$font-base-path}#{$font}/#{$font-family}/#{$font-family}.eot?#iefix') format('embedded-opentype'),
+                url('#{$font-base-path}#{$font}/#{$font-family}/#{$font-family}.woff') format('woff'),
+                url('#{$font-base-path}#{$font}/#{$font-family}/#{$font-family}.ttf') format('truetype'),
+                url('#{$font-base-path}#{$font}/#{$font-family}/#{$font-family}.svg##{$font-family}') format('svg');
+        }
+    }
+}

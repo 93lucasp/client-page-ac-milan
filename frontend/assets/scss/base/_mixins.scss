@@ -1,0 +1,152 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+//@mixin ie-fallback($ie-version: 8)
+//  @if index($supported-browsers, 'ie') and map-get($browser-minimum-versions, 'ie') == '7' and ($ie-version <= 8)
+//    $ie-version: $ie-version + 1
+//    .lt-ie#{$ie-version} &
+//      @content
+// Elements
+// ==========================================================================
+// usage:
+// $font-size-props: (
+//      null: 10px, //default value
+//      s-tablet: 20px
+// )
+// @include mq-prop(font-size, $font-size-props)
+// ==========================================================================
+@function identity($value) {
+    @return $value;
+}
+
+@mixin mq-prop($prop, $fs-map, $function: identity) {
+    @each $fs-breakpoint,
+    $prop-value in $fs-map {
+        @if (function-exists($function)) {
+            $prop-value: call($function, $prop-value);
+        }
+        @if $fs-breakpoint==null {
+            #{$prop}: $prop-value;
+        }
+        @else {
+            @include mq($fs-breakpoint) {
+                #{$prop}: $prop-value;
+            }
+        }
+    }
+}
+
+@mixin boost-performance ($translate: true) {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    @if ($translate) {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@mixin clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: '';
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin img-responsive($display: block) {
+    display: $display;
+    max-width: 100%;
+    height: auto;
+}
+
+@mixin scrollbar-custom {
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    &::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba($color-light, 0.3);
+    }
+}
+
+//see https://github.com/tinganho/compass-placeholder
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+@mixin triangle($color: #000, $size: '5px', $direction: 'up') {
+    width: 0;
+    height: 0;
+    @if $direction=='up' {
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        border-left: $size solid transparent;
+    }
+    @if $direction=='down' {
+        border-top: $size solid $color;
+        border-right: $size solid transparent;
+        border-left: $size solid transparent;
+    }
+    @if $direction=='right' {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+    }
+    @if $direction=='left' {
+        border-top: $size solid transparent;
+        border-right: $size solid $color;
+        border-bottom: $size solid transparent;
+    }
+}
+
+// Typography
+//
+// ==========================================================================
+// @mixin text-ellipsis() {
+//     overflow: hidden;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+// }
+
+// @mixin visually-hidden {
+//     position: absolute;
+//     overflow: hidden;
+//     clip: rect(0 0 0 0);
+//     width: 1px;
+//     height: 1px;
+//     margin: -1px;
+//     padding: 0;
+//     border: 0;
+// }
+
+
+/* LUCA CUSTOM */
+
+@mixin rotate($rotation) {
+    -webkit-transform: rotate($rotation);
+    -moz-transform: rotate($rotation);
+    -o-transform: rotate($rotation);
+    transform: rotate($rotation);
+}

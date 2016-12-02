@@ -1,0 +1,19 @@
+{
+  "name": "aquest-frontend",
+  "version": "2.5.5",
+  "authors": [
+    "AQuest"
+  ],
+  "license": "All rights reserved",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sass-mq": "3.2.9",
+    "normalize-css": "5.0.0"
+  }
+}

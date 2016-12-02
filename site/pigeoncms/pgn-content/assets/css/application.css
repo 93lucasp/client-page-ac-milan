@@ -1,0 +1,875 @@
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* Document
+   ========================================================================== */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none;
+}
+
+/* LUCA CUSTOM */
+/* ==========================================================================
+
+   Base Styles
+   ====
+
+
+   Some Basic Styles
+
+   ```
+   ```
+
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #000;
+}
+
+html,
+body {
+  line-height: 1.2;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  min-width: 320px;
+  color: #000;
+}
+
+audio,
+canvas,
+iframe,
+svg,
+video,
+img {
+  vertical-align: middle;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+abbr[title] {
+  border: 0;
+  text-decoration: none;
+}
+
+a:focus, a:active,
+input[type="button"]:focus,
+input[type="button"]:active,
+input[type="submit"]:focus,
+input[type="submit"]:active,
+input[type="reset"]:focus,
+input[type="reset"]:active,
+button:focus,
+button:active {
+  outline: 0;
+}
+
+/* ==========================================================================
+   ##  prevent 300ms delay in FF, Chrome and IE on touch devices
+   ========================================================================== */
+a[href],
+button {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+/* ==========================================================================
+   ## CSS to JS Breakpoint Bridge
+   ========================================================================== */
+body::after,
+body::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  display: block;
+}
+
+body::after {
+  content: 'mobile';
+}
+
+@media (min-width: 30em) {
+  body::after {
+    content: "mobile";
+  }
+}
+
+@media (min-width: 48em) {
+  body::after {
+    content: "s-tablet";
+  }
+}
+
+@media (min-width: 62em) {
+  body::after {
+    content: "l-tablet";
+  }
+}
+
+@media (min-width: 75em) {
+  body::after {
+    content: "desktop";
+  }
+}
+
+@media (min-width: 100em) {
+  body::after {
+    content: "wide";
+  }
+}
+
+body::before {
+  content: '/{"mobile":480,"s-tablet":768,"l-tablet":992,"desktop":1200,"wide":1600}/';
+}
+
+head {
+  font-family: '/{"mobile":480,"s-tablet":768,"l-tablet":992,"desktop":1200,"wide":1600}/';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* ==========================================================================
+
+   Utilities
+   ====
+
+   Application wide utilities
+
+   ========================================================================== */
+/* ==========================================================================
+   ### Section Title
+
+   ```
+   <p class="u-text--left">Left aligned text</p>
+   <p class="u-text--right">Right aligned text</p>
+   <p class="u-text--center">Centered text</p>
+   <p class="u-text--hide">Hidden text</p>
+   <p class="u-text--ellipsis">This text is one line with ellipsis</p>
+
+   ```
+   ========================================================================== */
+/* ==========================================================================
+   ##Box model helpers
+
+   ```
+
+   <div class="u-clearfix">Clearfixed box</div>
+   <div class="u-centered">Centered</div>
+   <div class="u-float--left">Floated left</div>
+   <div class="u-float--right">Floated right</div>
+   <div class="u-clear">Clearing box</div>
+
+   <div class="u-inline">
+    <div>inlined</div>
+    <div>items</div>
+   </div>
+
+   <div class="u-stacked">
+    <span>stacked</span>
+    <span>items</span>
+   </div>
+   ```
+   ========================================================================== */
+/* ==========================================================================
+
+   ### Table-like structures
+
+   ```
+   <div class="u-table">
+    <div class="u-table-cell">table cell</div>
+   </div>
+
+   <div class="u-table--for-centering">
+    <div class="u-table-cell">centered table cell</div>
+   </div>
+
+   ```
+   ========================================================================== */
+/* ==========================================================================
+
+   ### Visibility Helpers
+
+   ```
+   <p class="u-hidden--from-mobile">this is hidden from mobile screens</p>
+   <p class="u-hidden--from-s-tablet">this is hidden from small tablet screens</p>
+   <p class="u-hidden--from-l-tablet">this is hidden from large tablets screens</p>
+   <p class="u-hidden--from-desktop">this is hidden from desktop  screens</p>
+   <p class="u-hidden--from-large">this is hidden from large screens</p>
+
+   <p class="u-hidden--until-mobile">this is hidden until mobile screens</p>
+   <p class="u-hidden--until-s-tablet">this is hidden until small tablet screens</p>
+   <p class="u-hidden--until-l-tablet">this is hidden until large tablets screens</p>
+   <p class="u-hidden--until-desktop">this is hidden until desktop  screens</p>
+   <p class="u-hidden--until-large">this is hidden until large screens</p>
+   ```
+   ========================================================================== */
+body {
+  background: orange;
+  height: 1000px;
+}
+
+/*NAVBAR CUSTOM*/
+nav {
+  width: 100%;
+  height: 60px;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  color: #fff;
+}
+
+nav li {
+  padding: 0 10px;
+  display: inline-block;
+}
+
+nav .navBar-left {
+  width: 30%;
+  padding: 10px 0;
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+
+nav .navBar-right {
+  width: 70%;
+  padding: 22px 0;
+  position: relative;
+  display: inline-block;
+  float: right;
+  text-align: right;
+}
+
+nav .navBar-right a {
+  -webkit-transition: all 0.3s ease !important;
+  transition: all 0.3s ease !important;
+}
+
+nav .navBar-right a:hover {
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid #fff;
+}
+
+@media screen and (max-width: 992px) {
+  nav {
+    padding: 0;
+  }
+  nav .navBar-left {
+    width: 70%;
+  }
+  nav #icon-menu {
+    visibility: visible;
+  }
+  nav .navBar-right {
+    visibility: hidden;
+  }
+  nav .menu-drop-down {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+    font-size: 0.8em;
+    background-color: rgba(0, 131, 221, 0.8);
+    text-align: center;
+    z-index: 10;
+  }
+  nav .menu-drop-down ul {
+    margin: 0;
+    padding: 0;
+  }
+  nav .menu-drop-down li {
+    display: block;
+    padding: 15px 0 15px 0;
+    border-bottom: #fff 1px solid;
+  }
+  nav #icon-menu {
+    width: 40px;
+    margin: 5px auto;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    z-index: 11;
+  }
+  nav #icon-menu span {
+    width: 50%;
+    height: 3px;
+    display: block;
+    position: absolute;
+    background: #fff;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  nav #icon-menu span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+  }
+  nav #icon-menu span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+  }
+  nav #icon-menu span:nth-child(1), nav #icon-menu span:nth-child(2) {
+    top: 8px;
+  }
+  nav #icon-menu span:nth-child(3), nav #icon-menu span:nth-child(4) {
+    top: 17px;
+  }
+  nav #icon-menu span:nth-child(5), nav #icon-menu span:nth-child(6) {
+    top: 26px;
+  }
+  nav #icon-menu span:nth-child(7), nav #icon-menu span:nth-child(8) {
+    top: 35px;
+  }
+  nav #icon-menu.open span:nth-child(1),
+  nav #icon-menu.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+  }
+  nav #icon-menu.open span:nth-child(2),
+  nav #icon-menu.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+  }
+  nav #icon-menu.open span:nth-child(1) {
+    top: 7px;
+    left: 2px;
+  }
+  nav #icon-menu.open span:nth-child(2) {
+    top: 7px;
+    left: 16px;
+  }
+  nav #icon-menu.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+  nav #icon-menu.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+  nav #icon-menu.open span:nth-child(5) {
+    top: 20px;
+    left: 2px;
+  }
+  nav #icon-menu.open span:nth-child(6) {
+    top: 20px;
+    left: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav .navBar-left {
+    width: 100%;
+    padding: 10px 0;
+  }
+  nav li {
+    font-size: .7rem;
+  }
+}
+
+/*# sourceMappingURL=application.css.map */
