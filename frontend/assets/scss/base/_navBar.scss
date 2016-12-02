@@ -51,7 +51,7 @@ nav {
             right: 0;
             font-weight: bold;
             font-size: 0.8em;
-            background-color: $color-theme-with-opacity;
+            background-color: $color-black-opacity;
             text-align: center;
             z-index: 10;
             ul {
@@ -153,6 +153,7 @@ nav {
         }
     }
     @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+        height: 50px;
         .navBar-left {
             width: 100%;
             padding: 10px 0;

@@ -14,12 +14,39 @@
 // utils at the bottom
 @import "base/utils";
 body {
-    background: orange;
-    height: 1000px;
+	width: 100%;
+	height: 100%;
 }
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+/* TRANSITION LINE LINK SECTION CLIENT HOVER */
+.slider {
+	position: absolute;
+    margin:0;
+    height: 2px;
+    background-color: #fff;
+    width: 0%;
+    background-position: 100%;
+    transition: width 1s ease;
+}
+
+.for-slider-transition:hover .slider-top,.for-slider-transition:hover .slider-bottom{
+	 width: 100%;
+}
+.for-slider-transition {
+	position:relative;
+    display:inline-block;
+}
+
+/* END TRANSITION LINE LINK SECTION CLIENT HOVER END */
 /*NAVBAR CUSTOM*/
 @import "base/navBar";
-
+/*SECTION CLIENT CUSTOM*/
+@import "base/sectionClient";
 // .bar {
 // 	background:#000;
 // 	color:$color-white;

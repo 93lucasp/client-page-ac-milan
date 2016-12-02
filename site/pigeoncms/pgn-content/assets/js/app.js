@@ -84,7 +84,7 @@
 	    if (scroll_pos > 10) {
 	        $(window).scroll(function () {
 	            $("nav").css({
-	                "background-color": '#0083dd',
+	                "background-color": '#000',
 	                'transition': 'all 0.6s ease-out'
 	            }).fadeIn("slow");
 	        });

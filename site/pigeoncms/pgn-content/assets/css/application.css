@@ -619,6 +619,11 @@ head {
   font-family: '/{"mobile":480,"s-tablet":768,"l-tablet":992,"desktop":1200,"wide":1600}/';
 }
 
+body {
+  width: 100%;
+  height: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
@@ -699,10 +704,40 @@ h1, h2, h3, h4, h5, h6 {
    ```
    ========================================================================== */
 body {
-  background: orange;
-  height: 1000px;
+  width: 100%;
+  height: 100%;
 }
 
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+/* TRANSITION LINE LINK SECTION CLIENT HOVER */
+.slider, .slider-top, .slider-bottom {
+  position: absolute;
+  margin: 0;
+  height: 2px;
+  background-color: #fff;
+  width: 0%;
+  background-position: 100%;
+  -webkit-transition: width 1s ease;
+  transition: width 1s ease;
+}
+
+.for-slider-transition:hover .slider-top, .for-slider-transition:hover .slider-bottom {
+  width: 100%;
+}
+
+.for-slider-transition {
+  position: relative;
+  display: inline-block;
+}
+
+/* END TRANSITION LINE LINK SECTION CLIENT HOVER END */
 /*NAVBAR CUSTOM*/
 nav {
   width: 100%;
@@ -766,7 +801,7 @@ nav .navBar-right a:hover {
     right: 0;
     font-weight: bold;
     font-size: 0.8em;
-    background-color: rgba(0, 131, 221, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
     z-index: 10;
   }
@@ -863,6 +898,9 @@ nav .navBar-right a:hover {
 }
 
 @media screen and (max-width: 480px) {
+  nav {
+    height: 50px;
+  }
   nav .navBar-left {
     width: 100%;
     padding: 10px 0;
@@ -870,6 +908,71 @@ nav .navBar-right a:hover {
   nav li {
     font-size: .7rem;
   }
+}
+
+/*SECTION CLIENT CUSTOM*/
+.section-client {
+  width: 100%;
+  height: 46em;
+  padding: 15px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: url("../images/casa-milan.jpg") no-repeat center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 992px) {
+  .section-client {
+    height: 46em;
+  }
+}
+
+.section-client .description-client {
+  padding: 0 100px;
+  width: 100%;
+  height: 16em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  background: red;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(transparent, red);
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(transparent, red);
+  /* Standard syntax */
+}
+
+.section-client .description-client p {
+  line-height: 1.4em;
+  font-size: 1.2em;
+}
+
+.section-client .description-client a {
+  z-index: 99999 .section-client .description-client a;
+}
+
+@media screen and (max-width: 480px) {
+  .section-client .description-client {
+    padding: 0 10px;
+  }
+  .section-client .description-client p {
+    line-height: 1.2em;
+    font-size: 1em;
+  }
+}
+
+.slider-top {
+  margin: -6px auto;
+}
+
+.slider-bottom {
+  margin: 3px auto;
 }
 
 /*# sourceMappingURL=application.css.map */
