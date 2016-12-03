@@ -4,6 +4,10 @@
     padding: 40px 15px;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+            padding-bottom: 0;
+        }
     .wrapper-transition-box {
         width: 100%;
         position: relative;
@@ -11,7 +15,7 @@
         padding: 0 85px;
         @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
             padding: 0;
-            height: 980px;
+            height: 900px;
         }
         @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
             padding: 0;
@@ -19,7 +23,6 @@
         }
     }
     .box-client.start {
-       
         position: absolute;
         left: 7%;
         width: 26%;
@@ -27,31 +30,39 @@
         animation: moving 2s forwards;
     }
     .box-solution-challenge.start {
-       
         position: absolute;
         left: 37%;
         width: 26%;
         color: #a6a6a6;
         animation: moving 2.5s forwards;
-        @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
-            animation: moving-mobile-box-solution-challenge 2.4s forwards;
-        }
         @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
             animation: moving-s-tablet-box-solution-challenge 2.4s forwards;
         }
+        @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+            animation: moving-mobile-box-solution-challenge 2.4s forwards;
+        }
+        
     }
     .box-our-info.start {
-       
         right: 7%;
         position: absolute;
         width: 26%;
         color: #a6a6a6;
         animation: moving 3s forwards;
+        @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
+            animation: moving-s-tablet-box-our-info 2.4s forwards;
+        }
         @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
             animation: moving-mobile-box-our-info 2.4s forwards;
         }
-        @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
-            animation: moving-s-tablet-box-our-info 2.4s forwards;
+        
+    }
+    @keyframes moving {
+        0% {
+            top: 300px;
+        }
+        100% {
+            top: 50px;
         }
     }
     @media screen and (max-width: map-get($mq-breakpoints, l-tablet)) {
@@ -117,7 +128,7 @@
                 top: 986px;
             }
             100% {
-                top: 500px;
+                top: 470px;
             }
         }
         @keyframes moving-mobile-box-our-info {
@@ -125,16 +136,8 @@
                 top: 1240px;
             }
             100% {
-                top: 986px;
+                top: 920px;
             }
-        }
-    }
-    @keyframes moving {
-        0% {
-            top: 300px;
-        }
-        100% {
-            top: 50px;
         }
     }
 }

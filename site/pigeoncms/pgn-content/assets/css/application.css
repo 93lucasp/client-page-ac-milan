@@ -704,6 +704,7 @@ h1, h2, h3, h4, h5, h6 {
    ```
    ========================================================================== */
 body {
+  background-color: #fff;
   width: 100%;
   height: 100%;
 }
@@ -975,6 +976,13 @@ nav .navBar-right a:hover {
   padding: 40px 15px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+
+@media screen and (max-width: 480px) {
+  .section-info {
+    padding-bottom: 0;
+  }
 }
 
 .section-info .wrapper-transition-box {
@@ -987,7 +995,7 @@ nav .navBar-right a:hover {
 @media screen and (max-width: 768px) {
   .section-info .wrapper-transition-box {
     padding: 0;
-    height: 980px;
+    height: 900px;
   }
 }
 
@@ -1016,17 +1024,17 @@ nav .navBar-right a:hover {
           animation: moving 2.5s forwards;
 }
 
-@media screen and (max-width: 480px) {
-  .section-info .box-solution-challenge.start {
-    -webkit-animation: moving-mobile-box-solution-challenge 2.4s forwards;
-            animation: moving-mobile-box-solution-challenge 2.4s forwards;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .section-info .box-solution-challenge.start {
     -webkit-animation: moving-s-tablet-box-solution-challenge 2.4s forwards;
             animation: moving-s-tablet-box-solution-challenge 2.4s forwards;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-info .box-solution-challenge.start {
+    -webkit-animation: moving-mobile-box-solution-challenge 2.4s forwards;
+            animation: moving-mobile-box-solution-challenge 2.4s forwards;
   }
 }
 
@@ -1039,6 +1047,13 @@ nav .navBar-right a:hover {
           animation: moving 3s forwards;
 }
 
+@media screen and (max-width: 768px) {
+  .section-info .box-our-info.start {
+    -webkit-animation: moving-s-tablet-box-our-info 2.4s forwards;
+            animation: moving-s-tablet-box-our-info 2.4s forwards;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .section-info .box-our-info.start {
     -webkit-animation: moving-mobile-box-our-info 2.4s forwards;
@@ -1046,10 +1061,21 @@ nav .navBar-right a:hover {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .section-info .box-our-info.start {
-    -webkit-animation: moving-s-tablet-box-our-info 2.4s forwards;
-            animation: moving-s-tablet-box-our-info 2.4s forwards;
+@-webkit-keyframes moving {
+  0% {
+    top: 300px;
+  }
+  100% {
+    top: 50px;
+  }
+}
+
+@keyframes moving {
+  0% {
+    top: 300px;
+  }
+  100% {
+    top: 50px;
   }
 }
 
@@ -1134,7 +1160,7 @@ nav .navBar-right a:hover {
       top: 986px;
     }
     100% {
-      top: 500px;
+      top: 470px;
     }
   }
   @keyframes moving-mobile-box-solution-challenge {
@@ -1142,7 +1168,7 @@ nav .navBar-right a:hover {
       top: 986px;
     }
     100% {
-      top: 500px;
+      top: 470px;
     }
   }
   @-webkit-keyframes moving-mobile-box-our-info {
@@ -1150,7 +1176,7 @@ nav .navBar-right a:hover {
       top: 1240px;
     }
     100% {
-      top: 986px;
+      top: 920px;
     }
   }
   @keyframes moving-mobile-box-our-info {
@@ -1158,26 +1184,254 @@ nav .navBar-right a:hover {
       top: 1240px;
     }
     100% {
-      top: 986px;
+      top: 920px;
     }
   }
 }
 
-@-webkit-keyframes moving {
-  0% {
-    top: 300px;
-  }
-  100% {
-    top: 50px;
+/*SECTION NAVIGATION*/
+.section-navigation {
+  position: relative;
+  padding-top: 25px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.section-navigation video {
+  box-sizing: border-box;
+  background: url("../images/imac2.png") center center no-repeat;
+  background-size: contain;
+  padding: 2.4% 3.8% 16.6%;
+  position: absolute;
+  top: 80px;
+  left: 5%;
+  width: 90%;
+}
+
+.section-navigation .box-info-web-site {
+  margin-top: 93%;
+  margin-bottom: 10%;
+  position: relative;
+}
+
+.section-navigation .box-info-web-site h4 {
+  border-bottom: 2px solid #D8070A;
+}
+
+.section-navigation .box-info-web-site p {
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
+
+@media screen and (max-width: 480px) {
+  .section-navigation {
+    width: 95%;
   }
 }
 
-@keyframes moving {
+/*SECTION COLOR FONT*/
+.section-color-font {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.section-color-font .box-color {
+  width: 40%;
+  float: left;
+  display: inline-block;
+  height: 100%;
+}
+
+.section-color-font .box-color .fig-horizontal {
+  padding: 15px;
+  width: 40%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  background-color: #C90C0F;
+}
+
+.section-color-font .box-color .fig-horizontal h3 {
+  margin-top: 204px;
+}
+
+.section-color-font .box-color .fig-horizontal.animation {
+  -webkit-animation: moving-horizontal 3s forwards;
+          animation: moving-horizontal 3s forwards;
+}
+
+.section-color-font .box-color .fig-vertical {
+  padding: 15px;
+  width: 15%;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  background-color: #D8070A;
+  z-index: 1;
+}
+
+.section-color-font .box-color .fig-vertical.animation {
+  -webkit-animation: moving-vertical 1.5s forwards;
+          animation: moving-vertical 1.5s forwards;
+}
+
+.section-color-font .box-color .fig-block {
+  padding: 15px;
+  width: 25%;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  background-color: #000;
+  color: #fff;
+  z-index: 1;
+}
+
+.section-color-font .box-color .fig-block.animation {
+  -webkit-animation: moving-block 2s forwards;
+          animation: moving-block 2s forwards;
+}
+
+@-webkit-keyframes moving-horizontal {
   0% {
-    top: 300px;
+    left: -100%;
   }
   100% {
-    top: 50px;
+    left: 0;
+  }
+}
+
+@keyframes moving-horizontal {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes moving-vertical {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes moving-vertical {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes moving-block {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 15%;
+  }
+}
+
+@keyframes moving-block {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 15%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-color-font .box-color {
+    width: 50%;
+  }
+  .section-color-font .box-color .fig-horizontal {
+    padding: 10px;
+    width: 50%;
+  }
+  .section-color-font .box-color .fig-vertical {
+    padding: 10px;
+    width: 25%;
+  }
+  .section-color-font .box-color .fig-block {
+    padding: 10px;
+    width: 25%;
+  }
+  @-webkit-keyframes moving-block {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 25%;
+    }
+  }
+  @keyframes moving-block {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 25%;
+    }
+  }
+}
+
+.section-color-font .box-font {
+  width: 60%;
+  float: left;
+  display: inline-block;
+  height: 100%;
+  background-color: #d9d9d9;
+  color: #595959;
+  padding: 15px;
+}
+
+.section-color-font .box-font .fig-font {
+  position: absolute;
+}
+
+.section-color-font .box-font p {
+  font-family: 'Questrial', sans-serif;
+  margin-left: 20px;
+  word-break: break-all;
+}
+
+@media screen and (max-width: 480px) {
+  .section-color-font .box-font p {
+    margin-left: 10px;
+  }
+}
+
+.section-color-font .box-font .fig-font.animation {
+  -webkit-animation: moving-font 1.5s forwards;
+          animation: moving-font 1.5s forwards;
+}
+
+@media screen and (max-width: 480px) {
+  .section-color-font .box-font {
+    width: 50%;
+  }
+}
+
+@-webkit-keyframes moving-font {
+  0% {
+    margin-left: -100%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes moving-font {
+  0% {
+    margin-left: -100%;
+  }
+  100% {
+    margin-left: 0;
   }
 }
 

@@ -6,7 +6,7 @@
  *
  */
 $(function() {
-   
+
 
 
 });
@@ -89,20 +89,22 @@ function isElementInViewport(elem) {
     return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
 }
 
-// Check if it's time to start the animation.
-function checkAnimation() {
+function checkAnimationInfo() {
     var $elem = $('.wrapper-transition-box .box-client, .wrapper-transition-box .box-solution-challenge, .wrapper-transition-box .box-our-info');
-
-    // If the animation has already been started
-    if ($elem.hasClass('start')) return;
-
     if (isElementInViewport($elem)) {
-        // Start the animation
         $elem.addClass('start');
     }
 }
-
-// Capture scroll events
+function checkAnimationColor(classToAdd) {
+    var $elem = $(classToAdd);
+    if (isElementInViewport($elem)) {
+        $elem.addClass('animation');
+    }
+}
 $(window).scroll(function() {
-    checkAnimation();
+    checkAnimationInfo();
+    checkAnimationColor(".fig-block");
+    checkAnimationColor(".fig-font");
+    checkAnimationColor(".fig-vertical");
+    checkAnimationColor(".fig-horizontal");
 });
