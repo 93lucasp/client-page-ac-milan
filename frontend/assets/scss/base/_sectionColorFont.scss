@@ -1,133 +1,133 @@
-        .section-color-font {
-            width: 100%;
-            height: 300px;
-            position: relative;
-            .box-color {
-                width: 40%;
-                float: left;
-                display: inline-block;
-                height: 100%;
-                .fig-horizontal {
-                    padding: 15px;
-                    width: 40%;
-                    height: 100%;
-                    top: 0;
-                    position: absolute;
-                    background-color: #C90C0F;
-                    h3 {
-                    	margin-top: 204px;
-                    }
-                }
-                .fig-horizontal.animation {
-                    animation: moving-horizontal 3s forwards;
-                }
-                .fig-vertical {
-                    padding: 15px;
-                    width: 15%;
-                    height: 70%;
-                    position: absolute;
-                    top: 0;
-                    background-color: $color-red;
-                    z-index: 1;
-                }
-                .fig-vertical.animation {
-                    animation: moving-vertical 1.5s forwards;
-                }
-                .fig-block {
-                    padding: 15px;
-                    width: 25%;
-                    height: 70%;
-                    position: absolute;
-                    top: 0;
-                    background-color: #000;
-                    color: #fff;
-                    z-index: 1;
-
-                }
-                .fig-block.animation {
-                    animation: moving-block 2s forwards;
-                }
-                @keyframes moving-horizontal {
-                    0% {
-                        left: -100%;
-                    }
-                    100% {
-                        left: 0;
-                    }
-                }
-                @keyframes moving-vertical {
-                    0% {
-                        left: -100%;
-                    }
-                    100% {
-                        left: 0;
-                    }
-                }
-                @keyframes moving-block {
-                    0% {
-                        left: -100%;
-                    }
-                    100% {
-                        left: 15%;
-                    }
-                }
-                @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
-                    width: 50%;
-                    .fig-horizontal {
-                        padding: 10px;
-                        width: 50%;
-                    }
-                    .fig-vertical {
-                        padding: 10px;
-                        width: 25%;
-                    }
-                    .fig-block {
-                        padding: 10px;
-                        width: 25%;
-                    }
-                    @keyframes moving-block {
-                        0% {
-                            left: -100%;
-                        }
-                        100% {
-                            left: 25%;
-                        }
-                    }
-                }
+.section-color-font {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    .box-color {
+        width: 40%;
+        float: left;
+        display: inline-block;
+        height: 100%;
+        .fig-horizontal {
+            padding: 15px;
+            width: 40%;
+            height: 100%;
+            top: 0;
+            position: absolute;
+            background-color: #C90C0F;
+            h3 {
+            	margin-top: 204px;
             }
-            .box-font {
-                width: 60%;
-                float: left;
-                display: inline-block;
-                height: 100%;
-                background-color: #d9d9d9;
-                color: #595959;
-                padding: 15px;
-                .fig-font {
-                    position: absolute;
+        }
+        .fig-horizontal.animation {
+            animation: moving-horizontal 3s forwards;
+        }
+        .fig-vertical {
+            padding: 15px;
+            width: 15%;
+            height: 70%;
+            position: absolute;
+            top: 0;
+            background-color: $color-red;
+            z-index: 1;
+        }
+        .fig-vertical.animation {
+            animation: moving-vertical 1.5s forwards;
+        }
+        .fig-block {
+            padding: 15px;
+            width: 25%;
+            height: 70%;
+            position: absolute;
+            top: 0;
+            background-color: #000;
+            color: #fff;
+            z-index: 1;
+
+        }
+        .fig-block.animation {
+            animation: moving-block 2s forwards;
+        }
+        @keyframes moving-horizontal {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 0;
+            }
+        }
+        @keyframes moving-vertical {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 0;
+            }
+        }
+        @keyframes moving-block {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 15%;
+            }
+        }
+        @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+            width: 50%;
+            .fig-horizontal {
+                padding: 10px;
+                width: 50%;
+            }
+            .fig-vertical {
+                padding: 10px;
+                width: 25%;
+            }
+            .fig-block {
+                padding: 10px;
+                width: 25%;
+            }
+            @keyframes moving-block {
+                0% {
+                    left: -100%;
                 }
-                p {
-                    font-family: 'Questrial', sans-serif;
-                    
-                    margin-left: 20px;
-                    word-break: break-all;
-                    @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
-                   margin-left: 10px;
-                }
-                }
-                .fig-font.animation {
-					animation: moving-font 1.5s forwards;
-                }
-                @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
-                    width: 50%;
-                }
-                @keyframes moving-font {
-                    0% {
-                        margin-left: -100%;
-                    }
-                    100% {
-                        margin-left: 0;
-                    }
+                100% {
+                    left: 25%;
                 }
             }
         }
+    }
+    .box-font {
+        width: 60%;
+        float: left;
+        display: inline-block;
+        height: 100%;
+        background-color: #d9d9d9;
+        color: #595959;
+        padding: 15px;
+        .fig-font {
+            position: absolute;
+        }
+        p {
+            font-family: 'Questrial', sans-serif;
+            
+            margin-left: 20px;
+            word-break: break-all;
+            @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+           margin-left: 10px;
+        }
+        }
+        .fig-font.animation {
+			animation: moving-font 1.5s forwards;
+        }
+        @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+            width: 50%;
+        }
+        @keyframes moving-font {
+            0% {
+                margin-left: -100%;
+            }
+            100% {
+                margin-left: 0;
+            }
+        }
+    }
+}

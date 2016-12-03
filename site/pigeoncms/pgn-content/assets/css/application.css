@@ -1435,6 +1435,87 @@ nav .navBar-right a:hover {
   }
 }
 
+/*SECTION IMAGES*/
+.section-images {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.section-images .box-duomo {
+  float: left;
+  background-image: url("../images/milano.jpg");
+  width: 50%;
+  height: 700px;
+  background-position: right;
+  -webkit-transition: background-position .3s ease-in;
+  transition: background-position .3s ease-in;
+}
+
+.section-images .box-duomo:hover {
+  background-position: left;
+}
+
+.section-images .box-goal {
+  float: left;
+  background-image: url("../images/goal.jpg");
+  width: 50%;
+  height: 350px;
+  background-position: left;
+  -webkit-transition: background-position .3s ease-in;
+  transition: background-position .3s ease-in;
+}
+
+.section-images .box-goal:hover {
+  background-position: right;
+}
+
+.section-images .box-champions {
+  float: left;
+  background-image: url("../images/champions.jpg");
+  width: 50%;
+  height: 350px;
+  background-position: left;
+  -webkit-transition: background-position .3s ease-in;
+  transition: background-position .3s ease-in;
+}
+
+.section-images .box-champions:hover {
+  background-position: right;
+}
+
+.section-images .bg-black {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+}
+
+.section-images .bg-red {
+  background-color: rgba(216, 7, 10, 0.6);
+  height: 100%;
+}
+
+.section-images .bg-red-black {
+  height: 100%;
+  background: red;
+  background: -webkit-linear-gradient(rgba(216, 7, 10, 0.8), black);
+  background: linear-gradient(rgba(216, 7, 10, 0.8), black);
+}
+
+@media screen and (max-width: 480px) {
+  .section-images .box-duomo {
+    width: 100%;
+    height: 400px;
+  }
+  .section-images .box-goal {
+    width: 100%;
+    height: 400px;
+  }
+  .section-images .box-champions {
+    width: 100%;
+    height: 400px;
+  }
+}
+
 .color-red {
   color: #D8070A;
 }
