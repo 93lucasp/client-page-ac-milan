@@ -717,7 +717,7 @@ body {
 }
 
 /* TRANSITION LINE LINK SECTION CLIENT HOVER */
-.slider, .slider-top, .slider-bottom {
+.slider, .section-client .slider-top, .section-client .slider-bottom {
   position: absolute;
   margin: 0;
   height: 2px;
@@ -844,7 +844,7 @@ nav .navBar-right a:hover {
     border-radius: 0 9px 9px 0;
   }
   nav #icon-menu span:nth-child(odd) {
-    left: 0px;
+    left: 1px;
     border-radius: 9px 0 0 9px;
   }
   nav #icon-menu span:nth-child(1), nav #icon-menu span:nth-child(2) {
@@ -916,18 +916,10 @@ nav .navBar-right a:hover {
   height: 46em;
   padding: 15px;
   position: relative;
-  top: 0;
-  left: 0;
   background: url("../images/casa-milan.jpg") no-repeat center top;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-@media screen and (max-width: 992px) {
-  .section-client {
-    height: 46em;
-  }
 }
 
 .section-client .description-client {
@@ -939,13 +931,8 @@ nav .navBar-right a:hover {
   left: 0;
   color: #fff;
   background: red;
-  /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(transparent, red);
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
   background: linear-gradient(transparent, red);
-  /* Standard syntax */
 }
 
 .section-client .description-client p {
@@ -967,12 +954,235 @@ nav .navBar-right a:hover {
   }
 }
 
-.slider-top {
+.section-client .slider-top {
   margin: -6px auto;
 }
 
-.slider-bottom {
+.section-client .slider-bottom {
   margin: 3px auto;
+}
+
+@media screen and (max-width: 992px) {
+  .section-client {
+    height: 46em;
+  }
+}
+
+/*SECTION INFO CUSTOM*/
+.section-info {
+  width: 100%;
+  height: auto;
+  padding: 40px 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-info .wrapper-transition-box {
+  width: 100%;
+  position: relative;
+  height: 580px;
+  padding: 0 85px;
+}
+
+@media screen and (max-width: 768px) {
+  .section-info .wrapper-transition-box {
+    padding: 0;
+    height: 980px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-info .wrapper-transition-box {
+    padding: 0;
+    height: 1240px;
+  }
+}
+
+.section-info .box-client.start {
+  position: absolute;
+  left: 7%;
+  width: 26%;
+  color: #a6a6a6;
+  -webkit-animation: moving 2s forwards;
+          animation: moving 2s forwards;
+}
+
+.section-info .box-solution-challenge.start {
+  position: absolute;
+  left: 37%;
+  width: 26%;
+  color: #a6a6a6;
+  -webkit-animation: moving 2.5s forwards;
+          animation: moving 2.5s forwards;
+}
+
+@media screen and (max-width: 480px) {
+  .section-info .box-solution-challenge.start {
+    -webkit-animation: moving-mobile-box-solution-challenge 2.4s forwards;
+            animation: moving-mobile-box-solution-challenge 2.4s forwards;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-info .box-solution-challenge.start {
+    -webkit-animation: moving-s-tablet-box-solution-challenge 2.4s forwards;
+            animation: moving-s-tablet-box-solution-challenge 2.4s forwards;
+  }
+}
+
+.section-info .box-our-info.start {
+  right: 7%;
+  position: absolute;
+  width: 26%;
+  color: #a6a6a6;
+  -webkit-animation: moving 3s forwards;
+          animation: moving 3s forwards;
+}
+
+@media screen and (max-width: 480px) {
+  .section-info .box-our-info.start {
+    -webkit-animation: moving-mobile-box-our-info 2.4s forwards;
+            animation: moving-mobile-box-our-info 2.4s forwards;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-info .box-our-info.start {
+    -webkit-animation: moving-s-tablet-box-our-info 2.4s forwards;
+            animation: moving-s-tablet-box-our-info 2.4s forwards;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .section-info .box-client.start {
+    left: 0;
+    width: 30%;
+  }
+  .section-info .box-solution-challenge.start {
+    left: 35%;
+    width: 30%;
+  }
+  .section-info .box-our-info.start {
+    right: 0;
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-info .box-client.start {
+    left: 0;
+    width: 100%;
+  }
+  .section-info .box-solution-challenge.start {
+    left: 0;
+    width: 100%;
+  }
+  .section-info .box-our-info.start {
+    left: 0;
+    width: 100%;
+  }
+  @-webkit-keyframes moving-s-tablet-box-solution-challenge {
+    0% {
+      top: 986px;
+    }
+    100% {
+      top: 300px;
+    }
+  }
+  @keyframes moving-s-tablet-box-solution-challenge {
+    0% {
+      top: 986px;
+    }
+    100% {
+      top: 300px;
+    }
+  }
+  @-webkit-keyframes moving-s-tablet-box-our-info {
+    0% {
+      top: 1240px;
+    }
+    100% {
+      top: 600px;
+    }
+  }
+  @keyframes moving-s-tablet-box-our-info {
+    0% {
+      top: 1240px;
+    }
+    100% {
+      top: 600px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-info .box-client.start {
+    margin-top: 10px;
+    left: 0;
+    width: 100%;
+  }
+  .section-info .box-solution-challenge.start {
+    left: 0;
+    width: 100%;
+  }
+  .section-info .box-our-info.start {
+    left: 0;
+    width: 100%;
+  }
+  @-webkit-keyframes moving-mobile-box-solution-challenge {
+    0% {
+      top: 986px;
+    }
+    100% {
+      top: 500px;
+    }
+  }
+  @keyframes moving-mobile-box-solution-challenge {
+    0% {
+      top: 986px;
+    }
+    100% {
+      top: 500px;
+    }
+  }
+  @-webkit-keyframes moving-mobile-box-our-info {
+    0% {
+      top: 1240px;
+    }
+    100% {
+      top: 986px;
+    }
+  }
+  @keyframes moving-mobile-box-our-info {
+    0% {
+      top: 1240px;
+    }
+    100% {
+      top: 986px;
+    }
+  }
+}
+
+@-webkit-keyframes moving {
+  0% {
+    top: 300px;
+  }
+  100% {
+    top: 50px;
+  }
+}
+
+@keyframes moving {
+  0% {
+    top: 300px;
+  }
+  100% {
+    top: 50px;
+  }
+}
+
+.color-red {
+  color: #D8070A;
 }
 
 /*# sourceMappingURL=application.css.map */

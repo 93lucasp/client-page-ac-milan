@@ -3,15 +3,10 @@
     height: 46em;
     padding: 15px;
     position: relative;
-    top: 0;
-    left: 0;
     background: url('../images/casa-milan.jpg') no-repeat center top;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    @media screen and (max-width: map-get($mq-breakpoints, l-tablet)) {
-        height: 46em;
-    }
+    background-position: center; 
     .description-client {
         padding: 0 100px;
         width: 100%;
@@ -21,24 +16,16 @@
         left: 0;
         color: #fff;
         background: red;
-        /* For browsers that do not support gradients */
         background: -webkit-linear-gradient(transparent, red);
-        /* For Safari 5.1 to 6.0 */
         background: -o-linear-gradient(transparent, red);
-        /* For Opera 11.1 to 12.0 */
         background: -moz-linear-gradient(transparent, red);
-        /* For Firefox 3.6 to 15 */
         background: linear-gradient(transparent, red);
-        /* Standard syntax */
         p {
             line-height: 1.4em;
             font-size: 1.2em;
         }
         a {
-        	z-index: 99999
-            &:hover {
-               
-            }
+            z-index: 99999 &:hover {}
         }
         @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
             padding: 0 10px;
@@ -48,14 +35,15 @@
             }
         }
     }
+    .slider-top {
+        @extend .slider;
+        margin: -6px auto;
+    }
+    .slider-bottom {
+        @extend .slider;
+        margin: 3px auto;
+    }
+    @media screen and (max-width: map-get($mq-breakpoints, l-tablet)) {
+        height: 46em;
+    }
 }
-
-.slider-top {
-	@extend .slider;
-    margin:-6px auto;
-}
-.slider-bottom {
-	@extend .slider;
-    margin:3px auto;
-}
-

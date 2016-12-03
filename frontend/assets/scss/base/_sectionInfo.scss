@@ -1,0 +1,140 @@
+.section-info {
+    width: 100%;
+    height: auto;
+    padding: 40px 15px;
+    position: relative;
+    overflow: hidden;
+    .wrapper-transition-box {
+        width: 100%;
+        position: relative;
+        height: 580px;
+        padding: 0 85px;
+        @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
+            padding: 0;
+            height: 980px;
+        }
+        @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+            padding: 0;
+            height: 1240px;
+        }
+    }
+    .box-client.start {
+       
+        position: absolute;
+        left: 7%;
+        width: 26%;
+        color: #a6a6a6;
+        animation: moving 2s forwards;
+    }
+    .box-solution-challenge.start {
+       
+        position: absolute;
+        left: 37%;
+        width: 26%;
+        color: #a6a6a6;
+        animation: moving 2.5s forwards;
+        @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+            animation: moving-mobile-box-solution-challenge 2.4s forwards;
+        }
+        @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
+            animation: moving-s-tablet-box-solution-challenge 2.4s forwards;
+        }
+    }
+    .box-our-info.start {
+       
+        right: 7%;
+        position: absolute;
+        width: 26%;
+        color: #a6a6a6;
+        animation: moving 3s forwards;
+        @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+            animation: moving-mobile-box-our-info 2.4s forwards;
+        }
+        @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
+            animation: moving-s-tablet-box-our-info 2.4s forwards;
+        }
+    }
+    @media screen and (max-width: map-get($mq-breakpoints, l-tablet)) {
+        .box-client.start {
+            left: 0;
+            width: 30%;
+        }
+        .box-solution-challenge.start {
+            left: 35%;
+            width: 30%;
+        }
+        .box-our-info.start {
+            right: 0;
+            width: 30%;
+        }
+    }
+    @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
+        .box-client.start {
+            left: 0;
+            width: 100%;
+        }
+        .box-solution-challenge.start {
+            left: 0;
+            width: 100%;
+        }
+        .box-our-info.start {
+            left: 0;
+            width: 100%;
+        }
+        @keyframes moving-s-tablet-box-solution-challenge {
+            0% {
+                top: 986px;
+            }
+            100% {
+                top: 300px;
+            }
+        }
+        @keyframes moving-s-tablet-box-our-info {
+            0% {
+                top: 1240px;
+            }
+            100% {
+                top: 600px;
+            }
+        }
+    }
+    @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
+        .box-client.start {
+            margin-top: 10px;
+            left: 0;
+            width: 100%;
+        }
+        .box-solution-challenge.start {
+            left: 0;
+            width: 100%;
+        }
+        .box-our-info.start {
+            left: 0;
+            width: 100%;
+        }
+        @keyframes moving-mobile-box-solution-challenge {
+            0% {
+                top: 986px;
+            }
+            100% {
+                top: 500px;
+            }
+        }
+        @keyframes moving-mobile-box-our-info {
+            0% {
+                top: 1240px;
+            }
+            100% {
+                top: 986px;
+            }
+        }
+    }
+    @keyframes moving {
+        0% {
+            top: 300px;
+        }
+        100% {
+            top: 50px;
+        }
+    }
+}

@@ -6,7 +6,7 @@
  *
  */
 $(function() {
-
+   
 
 
 });
@@ -20,7 +20,7 @@ $('#icon-menu').click(function() {
 $(".menu-drop-down").hide();
 $("#icon-menu").click(function() {
     $(".menu-drop-down").slideToggle("slow", function() {
-        
+
     });
 });
 
@@ -29,7 +29,7 @@ $(".open").click(function() {
 });
 var closeResponsiveMenu = function() {
     $(".menu-drop-down").slideToggle("slow", function() {
-        
+
     });
 };
 
@@ -74,47 +74,35 @@ $(document).scroll(function() {
 //     autoAlpha: 1
 // }, 0.1);
 
-// function isElementInViewport(elem) {
-//     var $elem = $(elem);
+function isElementInViewport(elem) {
+    var $elem = $(elem);
 
-//     // Get the scroll position of the page.
-//     var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
-//     var viewportTop = $(scrollElem).scrollTop();
-//     var viewportBottom = viewportTop + $(window).height();
+    // Get the scroll position of the page.
+    var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+    var viewportTop = $(scrollElem).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
 
-//     // Get the position of the element on the page.
-//     var elemTop = Math.round( $elem.offset().top );
-//     var elemBottom = elemTop + $elem.height();
+    // Get the position of the element on the page.
+    var elemTop = Math.round($elem.offset().top);
+    var elemBottom = elemTop + $elem.height();
 
-//     return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
-// }
+    return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+}
 
-// // Check if it's time to start the animation.
-// function checkAnimation() {
-//     var $elem = $('.bar .eighty');
+// Check if it's time to start the animation.
+function checkAnimation() {
+    var $elem = $('.wrapper-transition-box .box-client, .wrapper-transition-box .box-solution-challenge, .wrapper-transition-box .box-our-info');
 
-//     // If the animation has already been started
-//     if ($elem.hasClass('start')) return;
+    // If the animation has already been started
+    if ($elem.hasClass('start')) return;
 
-//     if (isElementInViewport($elem)) {
-//         // Start the animation
-//         $elem.addClass('start');
-//     }
-// }
-// function checkAnimation1() {
-//     var $elem = $('.bar1 .eighty1');
+    if (isElementInViewport($elem)) {
+        // Start the animation
+        $elem.addClass('start');
+    }
+}
 
-//     // If the animation has already been started
-//     if ($elem.hasClass('start')) return;
-
-//     if (isElementInViewport($elem)) {
-//         // Start the animation
-//         $elem.addClass('start');
-//     }
-// }
-
-// // Capture scroll events
-// $(window).scroll(function(){
-//     checkAnimation();
-//     checkAnimation1();
-// });
+// Capture scroll events
+$(window).scroll(function() {
+    checkAnimation();
+});
