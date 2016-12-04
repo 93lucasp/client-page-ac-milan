@@ -14,7 +14,7 @@
         padding: 2.4% 3.8% 16.6%;
     }
     .box-info-web-site {
-        margin-top: 93%;
+        margin-top: 86%;
         margin-bottom: 10%;
         position: relative;
         h4 {
@@ -27,5 +27,8 @@
     }
     @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
         width: 95%;
+        .box-info-web-site {
+        margin-top: 94%;
+         }
     }
 }

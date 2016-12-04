@@ -51,23 +51,16 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	/**
-	 * Main Application File
-	 *
-	 * Use for bootstrapping large application
-	 * or just fill it with JS on small projects
-	 *
-	 */
 	$(function () {
 	    $('.box-white img').hide();
-	    $('.box-color, box-font').hide();
+	    $('.box-color').hide();
 	});
 	
 	$('#icon-menu').click(function () {
 	    $(this).toggleClass('open');
 	});
 	
-	// NAVBAR
+	/* NAVBAR  EFFECT RESPONSIVE HAMBURGER */
 	
 	$(".menu-drop-down").hide();
 	$("#icon-menu").click(function () {
@@ -80,7 +73,9 @@
 	var closeResponsiveMenu = function () {
 	    $(".menu-drop-down").slideToggle("slow", function () {});
 	};
+	/* END NAVBAR  EFFECT RESPONSIVE HAMBURGER */
 	
+	/* NAVBAR  EFFECT FROM TRANSPARENT TO BLACK */
 	var scroll_pos = 0;
 	$(document).scroll(function () {
 	    scroll_pos = $(this).scrollTop();
@@ -99,47 +94,24 @@
 	        });
 	    }
 	});
+	/* END NAVBAR  EFFECT FROM TRANSPARENT TO BLACK */
 	
-	// import 'babel-polyfill';
-	// import _ from 'lodash';
-	// import { TweenMax } from 'gsap';
-	
-	// import './base/plugins';
-	
-	// const body = document.body;
-	// const els = [];
-	
-	// _.times(12, (i) => {
-	//     const el = document.createElement('div');
-	//     el.innerHTML = i;
-	//     TweenMax.set(el, { autoAlpha: 0 });
-	//     body.appendChild(el);
-	//     els.push(el);
-	// });
-	
-	// TweenMax.staggerTo(els, 0.3, {
-	//     autoAlpha: 1
-	// }, 0.1);
-	
+	/* CHECKING IF ELEMENT THAT PASS IS PRESENT ON SCROLLING */
 	function isElementInViewport(elem) {
 	    var $elem = $(elem);
-	
-	    // Get the scroll position of the page.
 	    var scrollElem = navigator.userAgent.toLowerCase().indexOf('webkit') != -1 ? 'body' : 'html';
 	    var viewportTop = $(scrollElem).scrollTop();
 	    var viewportBottom = viewportTop + $(window).height();
-	
-	    // Get the position of the element on the page.
 	    var elemTop = Math.round($elem.offset().top);
 	    var elemBottom = elemTop + $elem.height();
-	
 	    return elemTop < viewportBottom && elemBottom > viewportTop;
 	}
+	/* END CHECKING IF ELEMENT THAT PASS IS PRESENT ON SCROLLING */
 	
-	function checkAnimationInfo() {
-	    var $elem = $('.wrapper-transition-box .box-client, .wrapper-transition-box .box-solution-challenge, .wrapper-transition-box .box-our-info');
+	function checkAnimationInfo(classToAdd) {
+	    var $elem = $(classToAdd);
+	    // CALLING FUNCTION AND PASS AN ELEMENT IF ON SCROLL THE ELEMNT IS PRESENT ADD A CLASS
 	    if (isElementInViewport($elem)) {
-	
 	        $elem.addClass('start');
 	    }
 	}
@@ -147,22 +119,23 @@
 	function checkAnimationColor(classToAdd) {
 	    var $elem = $(classToAdd);
 	    if (isElementInViewport($elem)) {
-	        $('.box-color, box-font').show();
+	        // CALLING FUNCTION AND PASS AN ELEMENT IF ON SCROLL THE ELEMNT IS PRESENT ADD A CLASS
+	        $('.box-color').show();
 	        $elem.addClass('animation');
 	    }
 	}
 	
 	function checkAnimationImg(classToAdd) {
-	
 	    var $elem = $(classToAdd);
 	    if (isElementInViewport($elem)) {
+	        // CALLING FUNCTION AND PASS AN ELEMENT IF ON SCROLL THE ELEMNT IS PRESENT ADD A CLASS
 	        $('.box-white img').show();
 	        $elem.addClass('animation');
 	    }
 	}
 	$(window).scroll(function () {
-	
-	    checkAnimationInfo();
+	    // ON SCROLL CALLING ALL THE FUNCTIONS TO CHECK IF THE CLASS THAT I PASS IS THERE
+	    checkAnimationInfo(".wrapper-transition-box .box-client, .wrapper-transition-box .box-solution-challenge, .wrapper-transition-box .box-our-info");
 	    checkAnimationColor(".fig-block");
 	    checkAnimationColor(".box-font");
 	    checkAnimationColor(".fig-vertical");
