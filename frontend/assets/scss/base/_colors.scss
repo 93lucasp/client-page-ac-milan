@@ -1,12 +1,14 @@
 $color-black: #000;
+$color-black-opacity: rgba(0, 0, 0, 0.8);
 $color-white: #fff;
-$color-light: $color-white;
-$color-dark: $color-black;
+$color-white-opacity: rgba(255, 255, 255, 0.8);
 $color-theme: #0083dd;
 $color-theme-with-opacity: rgba(0, 131, 221, 0.8);
-$color-black-opacity: rgba(0, 0, 0, 0.8);
-$color-red-opacity: rgba(216, 7, 10, 0.8);
-$color-text: $color-black;
-
 $color-red: #D8070A;
+$color-red-opacity: rgba(216, 7, 10, 0.8);
+$color-gray: #CCCCCC;
+$color-light-gray: #a6a6a6;
+$color-second-red: #C90C0F;
+$color-dark-gray: #595959;
+$color-middle-gray: #d9d9d9;
 

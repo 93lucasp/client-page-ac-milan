@@ -4,15 +4,15 @@
     padding: 40px 15px;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $color-gray;
     @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
-            padding-bottom: 0;
-        }
+        padding-bottom: 0;
+    }
     .wrapper-transition-box {
         width: 100%;
-        position: relative;
         height: 580px;
         padding: 0 85px;
+        position: relative;   
         @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
             padding: 0;
             height: 900px;
@@ -22,18 +22,19 @@
             height: 1240px;
         }
     }
-    .box-client.start {
-        position: absolute;
-        left: 7%;
+    .box-standard {
         width: 26%;
-        color: #a6a6a6;
+        position: absolute; 
+        color: $color-light-gray;
+    }
+    .box-client.start {
+        @extend .box-standard;
+        left: 7%;
         animation: moving 2s forwards;
     }
     .box-solution-challenge.start {
-        position: absolute;
+        @extend .box-standard;
         left: 37%;
-        width: 26%;
-        color: #a6a6a6;
         animation: moving 2.5s forwards;
         @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
             animation: moving-s-tablet-box-solution-challenge 2.4s forwards;
@@ -41,13 +42,10 @@
         @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
             animation: moving-mobile-box-solution-challenge 2.4s forwards;
         }
-        
     }
     .box-our-info.start {
+        @extend .box-standard;
         right: 7%;
-        position: absolute;
-        width: 26%;
-        color: #a6a6a6;
         animation: moving 3s forwards;
         @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
             animation: moving-s-tablet-box-our-info 2.4s forwards;
@@ -55,89 +53,51 @@
         @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
             animation: moving-mobile-box-our-info 2.4s forwards;
         }
-        
     }
     @keyframes moving {
-        0% {
-            top: 300px;
-        }
-        100% {
-            top: 50px;
-        }
+        0% { top: 300px; } 100% { top: 50px; }
     }
     @media screen and (max-width: map-get($mq-breakpoints, l-tablet)) {
         .box-client.start {
-            left: 0;
             width: 30%;
+            left: 0;
         }
         .box-solution-challenge.start {
-            left: 35%;
             width: 30%;
+            left: 35%;
         }
         .box-our-info.start {
-            right: 0;
             width: 30%;
+            right: 0;
         }
     }
     @media screen and (max-width: map-get($mq-breakpoints, s-tablet)) {
-        .box-client.start {
-            left: 0;
-            width: 100%;
-        }
-        .box-solution-challenge.start {
-            left: 0;
-            width: 100%;
-        }
+        .box-client.start,
+        .box-solution-challenge.start,
         .box-our-info.start {
-            left: 0;
             width: 100%;
+            left: 0;
         }
         @keyframes moving-s-tablet-box-solution-challenge {
-            0% {
-                top: 986px;
-            }
-            100% {
-                top: 300px;
-            }
+            0% { top: 986px; } 100% { top: 300px; }
         }
         @keyframes moving-s-tablet-box-our-info {
-            0% {
-                top: 1240px;
-            }
-            100% {
-                top: 600px;
-            }
+            0% { top: 1240px; } 100% { top: 600px; }
         }
     }
     @media screen and (max-width: map-get($mq-breakpoints, mobile)) {
-        .box-client.start {
+        .box-client.start,
+        .box-solution-challenge.start,
+        .box-our-info.start {
+            width: 100%;
             margin-top: 10px;
             left: 0;
-            width: 100%;
-        }
-        .box-solution-challenge.start {
-            left: 0;
-            width: 100%;
-        }
-        .box-our-info.start {
-            left: 0;
-            width: 100%;
         }
         @keyframes moving-mobile-box-solution-challenge {
-            0% {
-                top: 986px;
-            }
-            100% {
-                top: 470px;
-            }
+            0% { top: 986px; } 100% { top: 470px; }
         }
         @keyframes moving-mobile-box-our-info {
-            0% {
-                top: 1240px;
-            }
-            100% {
-                top: 920px;
-            }
+            0% { top: 1240px; } 100% { top: 920px; }
         }
     }
 }

@@ -6,9 +6,9 @@
  *
  */
 $(function() {
-
-
-
+    $('.box-white img').hide();
+    $('.box-color, box-font').hide();
+   
 });
 
 $('#icon-menu').click(function() {
@@ -92,19 +92,36 @@ function isElementInViewport(elem) {
 function checkAnimationInfo() {
     var $elem = $('.wrapper-transition-box .box-client, .wrapper-transition-box .box-solution-challenge, .wrapper-transition-box .box-our-info');
     if (isElementInViewport($elem)) {
+        
         $elem.addClass('start');
     }
 }
+
 function checkAnimationColor(classToAdd) {
     var $elem = $(classToAdd);
     if (isElementInViewport($elem)) {
+        $('.box-color, box-font').show();
         $elem.addClass('animation');
+    }
+
+}
+
+function checkAnimationImg(classToAdd) {
+
+    var $elem = $(classToAdd);
+    if (isElementInViewport($elem)) {
+        $('.box-white img').show();
+        $elem.addClass('animation');
+
     }
 }
 $(window).scroll(function() {
+
     checkAnimationInfo();
     checkAnimationColor(".fig-block");
-    checkAnimationColor(".fig-font");
+    checkAnimationColor(".box-font");
     checkAnimationColor(".fig-vertical");
     checkAnimationColor(".fig-horizontal");
+    checkAnimationImg(".box-white");
+
 });

@@ -23,7 +23,7 @@ button,
 input,
 select,
 textarea {
-    color: $color-text;
+    color: $color-gray;
 }
 
 html,
@@ -37,7 +37,7 @@ html {
 
 body {
     min-width: 320px;
-    color: $color-text;
+    color: $color-gray;
 }
 
 //Remove text-shadow in selection highlight: h5bp.com/i
@@ -45,12 +45,12 @@ body {
 //Customize the background color to match your design.
 
 //::-moz-selection {
-//    background-color: $color-text-selection;
+//    background-color: $color-gray-selection;
 //    text-shadow: none;
 //}
 //
 //::selection {
-//    background-color: $color-text-selection;
+//    background-color: $color-gray-selection;
 //    text-shadow: none;
 //}
 
